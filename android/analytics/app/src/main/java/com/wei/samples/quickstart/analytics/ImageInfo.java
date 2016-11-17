@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.samples.quickstart.analytics;
+package com.wei.samples.quickstart.analytics;
 
 /**
  * Pair of resource IDs representing an image and its title.

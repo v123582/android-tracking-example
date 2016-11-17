@@ -5,11 +5,11 @@ android {
     buildToolsVersion "24.0.2"
 
     defaultConfig {
-        applicationId "com.google.samples.quickstart.analytics"
+        applicationId "com.wei.samples.quickstart.analytics"
         minSdkVersion 14
         targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        versionCode 9
+        versionName "9.0"
     }
     buildTypes {
         release {
