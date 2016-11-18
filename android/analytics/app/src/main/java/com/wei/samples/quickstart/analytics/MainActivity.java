@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
     });
 
     // Send initial screen screen view hit.
-    sendScreenImageName();
+    // sendScreenImageName();
   }
 
   @Override
@@ -149,8 +149,12 @@ public class MainActivity extends AppCompatActivity {
 
     // [START screen_view_hit]
     Log.i(TAG, "Setting screen name: " + name);
+
     mTracker.setScreenName("Image~" + name);
-//    mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+    mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+    twoTracker.setScreenName("Image~" + name);
+    twoTracker.send(new HitBuilders.ScreenViewBuilder().build());
+
     // [END screen_view_hit]
   }
 
