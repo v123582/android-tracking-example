@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
    * The {@link Tracker} used to record screen views.
    */
   private Tracker mTracker;
+  private Tracker twoTracker;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
     // Obtain the shared Tracker instance.
     AnalyticsApplication application = (AnalyticsApplication) getApplication();
     mTracker = application.getDefaultTracker();
+    twoTracker = application.getDefaultTracker_twoTracker();
     // [END shared_tracker]
 
     // Create the adapter that will return a fragment for each image.
@@ -106,6 +108,10 @@ public class MainActivity extends AppCompatActivity {
       case R.id.menu_share:
         // [START custom_event]
         mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Share")
+                .build());
+        twoTracker.send(new HitBuilders.EventBuilder()
                 .setCategory("Action")
                 .setAction("Share")
                 .build());

@@ -27,6 +27,7 @@ import com.google.android.gms.analytics.Tracker;
  */
 public class AnalyticsApplication extends Application {
   private Tracker mTracker;
+  private Tracker twoTracker;
 
   /**
    * Gets the default {@link Tracker} for this {@link Application}.
@@ -39,5 +40,14 @@ public class AnalyticsApplication extends Application {
       mTracker = analytics.newTracker(R.xml.global_tracker);
     }
     return mTracker;
+  }
+
+  synchronized public Tracker getDefaultTracker_twoTracker() {
+    if (twoTracker == null) {
+      GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
+      // To enable debug logging use: adb shell setprop log.tag.GAv4 DEBUG
+      twoTracker = analytics.newTracker("UA-59103909-2");
+    }
+    return twoTracker;
   }
 }
