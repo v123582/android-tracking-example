@@ -94,6 +94,19 @@ public class MainActivity extends AppCompatActivity {
 
     // Send initial screen screen view hit.
     // sendScreenImageName();
+
+    try {
+      Thread.sleep(1000);
+      mTracker.setScreenName("main screen");
+      mTracker.send(new HitBuilders.EventBuilder().build());
+      twoTracker.setScreenName("main screen");
+      twoTracker.send(new HitBuilders.EventBuilder().build());
+      Log.i("INFO", "Send initial data to GA");
+    } catch (InterruptedException ie) {
+      //Handle exception
+    }
+
+
   }
 
   @Override
