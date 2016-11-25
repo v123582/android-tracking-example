@@ -31,6 +31,7 @@ import android.view.MenuItem;
 
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
+import com.flurry.android.FlurryAgent;
 
 /**
  * Activity which displays numerous background images that may be viewed. These background images
@@ -69,6 +70,10 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
+
+    new FlurryAgent.Builder()
+            .withLogEnabled(true)
+            .build(this, "W4WGYCW5PY36W59KQY8M");
 
     // [START shared_tracker]
     // Obtain the shared Tracker instance.

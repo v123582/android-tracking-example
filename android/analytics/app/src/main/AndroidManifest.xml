@@ -6,6 +6,12 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
+    <!-- Recommended permission - External memory pre-caching -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- Optional permission - Location based ad targeting -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
 
     <application
         android:name="com.wei.samples.quickstart.analytics.AnalyticsApplication"
@@ -22,6 +28,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <!-- Required Activities if using Flurry Advertising -->
+        <activity
+            android:name="com.flurry.android.FlurryFullscreenTakeoverActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize">
+        </activity>
+
 
         <service android:name="com.google.android.gms.analytics.CampaignTrackingService" />
         <receiver android:name="com.google.android.gms.analytics.CampaignTrackingReceiver"
